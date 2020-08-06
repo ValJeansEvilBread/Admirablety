@@ -44,8 +44,6 @@ public class User {
     public String username;
     
     @Length(min = 7, message = "Your password must have at least 7 characters")
-    @NotEmpty(message = "Please provide a password")
-    @JsonProperty(access = Access.WRITE_ONLY)
     private String password;
     
     @NotEmpty(message = "Please enter your first name")

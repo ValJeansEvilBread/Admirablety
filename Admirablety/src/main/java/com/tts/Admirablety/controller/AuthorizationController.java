@@ -28,14 +28,14 @@ public class AuthorizationController {
         return "login";
     }
     
-    @GetMapping(value="/signup")
+    @GetMapping(value="/register")
     public String registration(Model model){
         User user = new User();
         model.addAttribute("user", user);
         return "registration";
     }
 
-    @PostMapping(value = "/signup")
+    @PostMapping(value = "/register")
     public String createNewUser(@Valid User user, BindingResult bindingResult, Model model) {
         User userExists = userService.findByUsername(user.getUsername());
         if (userExists != null) {
